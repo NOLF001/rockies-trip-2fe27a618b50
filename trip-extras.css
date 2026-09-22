@@ -1,0 +1,92 @@
+/* Trip extras: bundled maps, clocks, contacts and cash helper. Colors reuse the region palette. */
+
+/* Maps */
+.trip-map{margin:0 0 20px;background:#fff;border:1px solid #e5e9ed;border-radius:14px;overflow:hidden;box-shadow:0 2px 7px #273a4c08}
+.map-frame{position:relative;background:#e6ecef}
+.map-frame svg{display:block;width:100%;height:auto;max-height:min(64vh,560px)}
+.map-tiles{filter:saturate(.55) contrast(.95) brightness(1.03)}
+.map-route{stroke:#426e53;stroke-linejoin:round;stroke-linecap:round;opacity:.92}
+.map-flight{stroke:#356482;stroke-linecap:round;opacity:.9}
+.map-pin circle{fill:#356482;stroke:#fff}
+.map-pin[data-region="tour"] circle{fill:#426e53}
+.map-pin[data-region="calgary"] circle{fill:#a0703f}
+.map-pin text{fill:#fff;font-weight:800;font-family:inherit}
+.map-attr{position:absolute;right:6px;bottom:5px;padding:1px 6px;border-radius:4px;background:#ffffffd9;color:#41566a;font-size:.6875rem}
+.trip-map figcaption{padding:12px 14px 12px}
+.map-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;margin-bottom:8px}
+.map-head strong{display:flex;align-items:center;gap:6px;font-size:.9375rem}
+.map-head strong .ic{color:#4a7d92}
+.map-head small{color:var(--muted);font-size:.8125rem}
+.map-legend{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0 16px;margin:0;padding:0;list-style:none}
+.map-legend li{display:grid;grid-template-columns:22px minmax(0,1fr) auto;align-items:center;gap:8px;padding:7px 0;border-top:1px solid #eef1f4}
+.map-num{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#356482;color:#fff;font-size:.75rem;font-weight:800;font-variant-numeric:tabular-nums}
+.map-legend li[data-region="tour"] .map-num{background:#426e53}
+.map-legend li[data-region="calgary"] .map-num{background:#a0703f}
+.map-name{min-width:0}
+.map-name strong,.map-name small{display:block;line-height:1.35}
+.map-name strong{font-size:.8125rem}
+.map-name small{font-size:.75rem;color:var(--muted)}
+.map-legend a{display:inline-flex;align-items:center;gap:4px;padding:5px 9px;border-radius:7px;background:#f0f5f9;color:#31566c;font-size:.75rem;font-weight:700;text-decoration:none;white-space:nowrap}
+.map-legend a:hover{background:#e2ecf3}
+.trip-map.compact{margin:0;box-shadow:none}
+.trip-map.compact .map-legend{grid-template-columns:minmax(0,1fr)}
+.day-map{margin-top:18px}
+.spring-details .trip-map{margin:14px 0}
+
+/* Overview cards */
+.clock-card,.contacts-card,.cash-card{padding:20px}
+.clock-rows{display:grid;margin:12px 0}
+.clock-rows>div{display:grid;grid-template-columns:84px auto minmax(0,1fr);align-items:baseline;gap:10px;padding:8px 0;border-top:1px solid #eef1f4}
+.clock-rows span{font-size:.8125rem;color:var(--muted)}
+.clock-rows strong{font-size:1.375rem;line-height:1.2;color:#243746;font-variant-numeric:tabular-nums}
+.clock-rows small{font-size:.75rem;color:var(--muted);text-align:right}
+.next-up{display:grid;gap:2px;padding:12px 14px;border-radius:12px;background:#eaf3fa}
+.next-up small{display:flex;align-items:center;gap:5px;font-size:.75rem;font-weight:700;color:#356482}
+.next-up strong{font-size:1rem;color:#243746}
+.next-up span{font-size:.8125rem;color:#41566a}
+
+.contacts-list,.cash-list{display:grid;margin:12px 0 0;padding:0;list-style:none}
+.contacts-list li{display:grid;grid-template-columns:30px minmax(0,1fr) auto;align-items:center;gap:10px;padding:8px 0;border-top:1px solid #eef1f4}
+.contact-ic{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:#fff0e8;color:#955b3d}
+.contact-ic .ic{width:16px;height:16px}
+.contacts-list li:nth-child(n+2) .contact-ic{background:#edf3f8;color:#31566c}
+.contacts-list strong,.contacts-list small{display:block;line-height:1.35}
+.contacts-list strong{font-size:.8125rem}
+.contacts-list small{font-size:.75rem;color:var(--muted)}
+.contacts-list a{font-size:.8125rem;font-weight:700;color:#31566c;text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums}
+
+.converter{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;margin:12px 0 8px}
+.converter input,.converter select{min-width:0;padding:9px 11px;border:1px solid #dfe5eb;border-radius:9px;background:#f7f9fb;color:var(--ink);font-size:.9375rem}
+.converter-out{font-size:1.25rem;font-weight:800;color:#243746;font-variant-numeric:tabular-nums}
+.converter-rate{margin-top:2px;font-size:.75rem;color:var(--muted)}
+.cash-list li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:8px 0;border-top:1px solid #eef1f4;font-size:.8125rem}
+.cash-list small{display:block;font-size:.75rem;color:var(--muted)}
+.cash-list b{white-space:nowrap;font-variant-numeric:tabular-nums}
+.cash-total{margin-top:8px;padding:10px 12px;border-radius:10px;background:#fbf0e4;color:#8a623a;font-size:.8125rem;font-weight:700}
+
+/* Tour nights: which hotel on which night */
+.stay-plan{margin-top:18px;padding:16px 18px;border:1px solid #e5e9ed;border-radius:14px;background:#fff}
+.stay-plan h3{margin:0 0 10px;font-size:.9375rem}
+.stay-nights{display:grid;gap:0;margin:0;padding:0;list-style:none;counter-reset:none}
+.stay-nights li{display:grid;grid-template-columns:82px 96px minmax(0,1fr);align-items:baseline;gap:10px;padding:9px 0;border-top:1px solid #eef1f4}
+.stay-date{font-size:.8125rem;font-weight:800;color:#8a623a;font-variant-numeric:tabular-nums}
+.stay-city{font-size:.8125rem;font-weight:700;color:#31566c}
+.stay-hotel{font-size:.8125rem;line-height:1.6}
+.stay-hotel em{font-style:normal;color:var(--muted)}
+.stay-note{margin:12px 0 0;padding:10px 12px;border-radius:10px;background:#fffaf3;border:1px solid #efe3d2;font-size:.8125rem;line-height:1.65;color:#8a623a}
+@media(max-width:600px){.stay-nights li{grid-template-columns:70px minmax(0,1fr)}.stay-hotel{grid-column:1/-1}}
+
+/* Today marker and weather sun times */
+#timeline .scan-row.is-today{border-color:#80aa92;box-shadow:0 0 0 2px #80aa9240}
+.today-chip{display:inline-block;margin-left:8px;padding:1px 8px;border-radius:999px;background:#426e53;color:#fff;font-size:.6875rem;font-weight:800;vertical-align:1px}
+.weather-days .sun-line{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 8px;margin-top:6px;font-size:.75rem;color:#61717e;font-variant-numeric:tabular-nums}
+.weather-days .sun-line .ic{margin-right:2px;color:#c08a4a}
+footer .credits{margin:6px 0 0}
+
+@media(max-width:600px){
+  .clock-rows>div{grid-template-columns:70px auto minmax(0,1fr)}
+  .map-legend{grid-template-columns:minmax(0,1fr)}
+  .contacts-list li{grid-template-columns:30px minmax(0,1fr)}
+  .contacts-list a{grid-column:2}
+}
+@media print{.map-legend a{display:none}}

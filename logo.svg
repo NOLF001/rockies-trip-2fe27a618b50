@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Snow-capped Rocky Mountain range">
+  <defs><clipPath id="tile"><rect width="48" height="48" rx="11"/></clipPath></defs>
+  <g clip-path="url(#tile)">
+    <rect width="48" height="48" fill="#1f3a4d"/>
+    <circle cx="37" cy="11" r="3.6" fill="#f3c98b"/>
+    <path d="M-2 38 L11 21 L17 28 L27 16 L35 26 L41 20 L50 32 L50 38 Z" fill="#6f98ad"/>
+    <path d="M4 40 L21 15 L28 25 L32 20 L46 40 Z" fill="#e3edf2"/>
+    <path d="M21 15 L28 25 L25 40 L46 40 L32 20 L28 25 Z" fill="#bcd0da"/>
+    <path d="M17 21 L21 15 L25 21 L23 19.6 L21 21.6 L19 19.6 Z" fill="#ffffff"/>
+    <rect y="40" width="48" height="8" fill="#3e6b62"/>
+    <path d="M6 43.5 C12 41.8 18 45.2 24 43.5 S36 41.8 42 43.5" fill="none" stroke="#7fc4d6" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+</svg>

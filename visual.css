@@ -1,0 +1,122 @@
+/* Visual layer: line icons, destination photography and boarding-pass flights. */
+.ic{width:1em;height:1em;flex-shrink:0;vertical-align:-.14em;stroke-width:2}
+
+/* Navigation */
+.nav-item .nav-ic{display:grid;place-items:center}
+.nav-item .nav-ic .ic{width:18px;height:18px}
+.mobile-nav .mobile-ic{display:grid;place-items:center;margin-bottom:3px}
+.mobile-nav .mobile-ic .ic{width:20px;height:20px}
+
+/* Section badges, tinted by the same region colors used across the timeline */
+.sec-badge{display:inline-grid;place-items:center;width:34px;height:34px;margin-right:10px;border-radius:10px;background:#e7f0f6;color:#31566c;vertical-align:-7px}
+.sec-badge .ic{width:18px;height:18px}
+#itinerary .sec-badge,#checklist .sec-badge{background:#ebf4ee;color:#426e53}
+#flights .sec-badge,#weather .sec-badge{background:#eaf3fa;color:#356482}
+#hotels .sec-badge,#shopping .sec-badge,#budget .sec-badge{background:#fbf0e4;color:#8a623a}
+
+/* Overview */
+.route-point .rp-ic{display:block;width:18px;height:18px;margin-bottom:4px;color:#356482}
+.route-point:nth-child(3) .rp-ic,.route-point:nth-child(5) .rp-ic{color:#426e53}
+.route-point:nth-child(7) .rp-ic{color:#8a623a}
+.route-line .ic{width:16px;height:16px;color:#9aabb7}
+.card-ic{margin-right:7px;color:#4a7d92}
+.mini-stats .stat-ic{display:grid;place-items:center;margin-bottom:4px;color:#4a7d92}
+.mini-stats .stat-ic .ic{width:18px;height:18px}
+.decision-card .flight-mini span .ic{margin-right:4px}
+.action-list li>span.act-ic .ic{width:15px;height:15px}
+
+.trip-gallery{margin:0 0 22px}
+.trip-gallery-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px;margin-bottom:10px}
+.trip-gallery-head h3{display:flex;align-items:center;gap:8px;margin:0;font-size:1rem}
+.trip-gallery-head h3 .ic{color:#4a7d92}
+.trip-gallery-head small{color:var(--muted);font-size:.8125rem}
+.gallery-track{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(160px,1fr);gap:12px;overflow-x:auto;padding:2px 2px 8px;scroll-snap-type:x mandatory}
+.gallery-card{position:relative;display:block;aspect-ratio:4/5;min-width:0;border:0;padding:0;border-radius:14px;overflow:hidden;cursor:zoom-in;scroll-snap-align:start;background:#dfe7ec;box-shadow:0 2px 7px #273a4c14;font:inherit}
+.gallery-card img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.gallery-card:hover img{transform:scale(1.05)}
+.gallery-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,#0b2230d0)}
+.g-day{position:absolute;top:10px;left:10px;z-index:1;border-radius:999px;padding:3px 9px;background:#eaf3fa;color:#356482;font-size:.75rem;font-weight:800;font-variant-numeric:tabular-nums}
+.gallery-card[data-region="tour"] .g-day{background:#ebf4ee;color:#426e53}
+.gallery-card[data-region="calgary"] .g-day{background:#fbf0e4;color:#8a623a}
+.g-cap{position:absolute;left:12px;right:12px;bottom:11px;z-index:1;color:#fff;font-weight:700;font-size:.875rem;line-height:1.35;text-align:left}
+
+/* Rows with a photo or icon tile */
+.scan-row.thumb-row{grid-template-columns:60px minmax(0,1fr) auto}
+.scan-row .row-thumb{display:block;width:60px;height:60px;object-fit:cover;border-radius:9px}
+.thumb-tile{display:grid;place-items:center;width:60px;height:60px;border-radius:10px;background:#edf3f8;color:#31566c}
+.thumb-tile .ic{width:26px;height:26px}
+#shopping .thumb-tile{background:#fbf0e4;color:#8a623a}
+#timeline .scan-row.thumb-row{grid-template-columns:60px 80px minmax(0,1fr) 82px}
+#timeline .scan-row .day-thumb{display:block;width:80px;height:58px;object-fit:cover;border-radius:9px;border:0;box-shadow:none}
+.row-ic{display:inline-grid;place-items:center;width:24px;height:24px;margin-right:8px;border-radius:7px;background:#eef3f6;color:#41566a;vertical-align:-7px}
+.row-ic .ic{width:14px;height:14px}
+.scan-row[data-region="seattle"] .row-ic{background:#eaf3fa;color:#356482}
+.scan-row[data-region="tour"] .row-ic{background:#ebf4ee;color:#426e53}
+.scan-row[data-region="calgary"] .row-ic{background:#fbf0e4;color:#8a623a}
+.checklist-fold>summary .ic{width:17px;height:17px;margin-right:8px;color:#426e53}
+.hotel-rules span .ic{margin-right:5px}
+
+/* Day detail dialog */
+.day-hero{position:relative;margin:0 0 12px;aspect-ratio:21/8;border-radius:14px;overflow:hidden;background:#dfe7ec}
+.day-hero button{display:block;width:100%;height:100%;border:0;padding:0;cursor:zoom-in}
+.day-hero img{display:block;width:100%;height:100%;object-fit:cover}
+.day-hero figcaption{position:absolute;left:12px;bottom:10px;display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:8px;background:#0b2230b8;color:#fff;font-size:.8125rem;pointer-events:none}
+.day-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:0 0 16px}
+.day-strip button{position:relative;aspect-ratio:16/10;border:0;padding:0;border-radius:10px;overflow:hidden;cursor:zoom-in;background:#dfe7ec}
+.day-strip img{display:block;width:100%;height:100%;object-fit:cover}
+.day-strip span{position:absolute;left:6px;bottom:6px;padding:2px 7px;border-radius:6px;background:#0b2230b8;color:#fff;font-size:.75rem}
+.dialog-body .event time .ic{margin-right:5px;color:#6f8aa0}
+.meal-line .ic{margin-right:6px;color:#966c41}
+
+/* Boarding-pass flight board */
+.flight-board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0 0 24px}
+.bp{display:grid;grid-template-rows:auto 1fr auto;min-width:0;background:#fff;border:1px solid #e5e9ed;border-radius:16px;overflow:hidden;box-shadow:0 2px 7px #273a4c0a}
+.bp-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 10px;padding:11px 16px;background:#3f5c72;color:#fff}
+.bp[data-air="ws"] .bp-top{background:#3e6b62}
+.bp-top strong{display:flex;align-items:center;gap:8px;font-size:1rem;letter-spacing:.04em}
+.bp-top span{font-size:.8125rem;opacity:.92}
+.bp-mid{display:grid;grid-template-columns:minmax(0,1fr) minmax(84px,auto) minmax(0,1fr);align-items:center;gap:10px;padding:16px}
+.bp-end em{display:block;font-style:normal;font-weight:800;font-size:.8125rem;letter-spacing:.1em;color:#61717e}
+.bp-end b{display:block;font-size:1.75rem;line-height:1.15;color:#243746;font-variant-numeric:tabular-nums}
+.bp-end sup{font-size:.75rem;color:#955b3d;margin-left:2px}
+.bp-end small{display:block;font-size:.8125rem;color:var(--muted)}
+.bp-end.to{text-align:right}
+.bp-path{display:grid;justify-items:center;gap:2px;color:#7c93a3;font-size:.75rem}
+.bp-path .line{display:flex;align-items:center;gap:6px;width:100%}
+.bp-path .line::before,.bp-path .line::after{content:"";flex:1;border-top:1.5px dashed #c9d6df}
+.bp-path .ic{width:18px;height:18px;color:#5a7d93}
+.bp-foot{position:relative;display:flex;align-items:center;gap:8px;padding:10px 16px;border-top:1.5px dashed #e1e6eb;background:#fafcfd;color:#41566a;font-size:.8125rem}
+.bp-foot::before,.bp-foot::after{content:"";position:absolute;top:-8px;width:14px;height:14px;border-radius:50%;background:var(--soft-bg,#f5f6f8)}
+.bp-foot::before{left:-8px}.bp-foot::after{right:-8px}
+.bp-foot .ic{color:#8a623a}
+.board-sub{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-size:1rem}
+.board-sub .ic{color:#4a7d92}
+
+@media(max-width:800px){.flight-board{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){
+  .scan-row.thumb-row{grid-template-columns:48px minmax(0,1fr) auto}
+  .scan-row .row-thumb,.thumb-tile{width:48px;height:48px}
+  .thumb-tile .ic{width:22px;height:22px}
+  #timeline .scan-row.thumb-row{grid-template-columns:44px 58px minmax(0,1fr)}
+  #timeline .scan-row .day-thumb{width:58px;height:46px}
+  .day-hero{aspect-ratio:16/9}
+  .gallery-track{grid-auto-columns:minmax(140px,44%)}
+  .bp-end b{font-size:1.4rem}
+}
+@media(prefers-reduced-motion:reduce){.gallery-card img{transition:none}}
+@media print{.trip-gallery,.day-strip{display:none}.bp{break-inside:avoid}}
+
+/* Gallery cards open the day plan; the dialog adds where you sleep and practical tips */
+.g-cap small{display:block;margin-top:2px;font-size:.75rem;font-weight:600;opacity:.85}
+.gallery-card:focus-visible{outline:3px solid #3184a7;outline-offset:2px}
+.dialog-body .day-stay,.print-details .day-stay{display:flex;align-items:center;gap:8px;margin:10px 0 0;padding:10px 14px;border-radius:10px;background:#eaf3fa;color:#31566c;font-size:.8125rem;line-height:1.5}
+.day-stay .ic{color:#356482}
+.day-tips{margin-top:10px;padding:12px 16px;border:1px solid #efe3d2;border-radius:10px;background:#fffaf3}
+.dialog-body .day-tips h4,.day-tips h4{display:flex;align-items:center;gap:6px;margin:0 0 6px;font-size:.875rem;color:#8a623a}
+.day-tips ul{display:grid;gap:4px;margin:0;padding-left:18px}
+.day-tips li{font-size:.8125rem;line-height:1.6}
+
+/* Banff logo: Mount Rundle's tilted slab over the Bow River */
+.brand-mark.banff-logo{width:44px;height:44px;padding:0;overflow:hidden;background:#ffffff10;border:1px solid #ffffff26;border-radius:12px}
+.brand-mark.banff-logo svg{display:block;width:100%;height:100%}
+.brand strong{letter-spacing:.06em}
