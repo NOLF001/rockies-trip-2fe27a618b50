@@ -45,7 +45,7 @@ $$('[data-target]').forEach(b=>b.addEventListener('click',()=>showView(b.dataset
 // Delegated so buttons re-rendered later (e.g. the overview decision card) still navigate.
 document.addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b)showView(b.dataset.go)});
 
-const itineraryLabels={"9.24":"OZ272 15:15 시애틀 도착 · 웨스틴 체크인","9.25":"파이크 플레이스 · 워터프런트 · 스페이스 니들","9.26":"WS1553 10:30 출발 · 14:00 투어 합류","9.27":"존스턴 캐년과 아이스필드 파크웨이","9.28":"재스퍼 5대 호수와 멀린 호수","9.29":"빙하 위를 걷고 두 호수를 만나는 날","9.30":"14:00 투어 종료 · 밴프 온천","10.1":"밴프 오전 · WS1552 17:50 출발","10.2":"OZ271 00:10 출발 · 10/3 04:30 인천"};
+const itineraryLabels={"9.24":"OZ272 15:15 도착 · 해밀턴 뷰포인트 야경","9.25":"파이크 플레이스 · UW 캠퍼스 · 가스웍스 야경","9.26":"WS1553 10:30 출발 · 14:00 투어 합류","9.27":"존스턴 캐년과 아이스필드 파크웨이","9.28":"재스퍼 5대 호수와 멀린 호수","9.29":"빙하 위를 걷고 두 호수를 만나는 날","9.30":"14:00 투어 종료 · 밴프 온천","10.1":"밴프 오전 · WS1552 17:50 출발","10.2":"OZ271 00:10 출발 · 10/3 04:30 인천"};
 function renderTimeline(filter='all'){
   const days=itinerary.filter(d=>filter==='all'||d.tag===filter);
   $('#timeline').innerHTML=days.map(d=>`<button type="button" class="scan-row" data-region="${d.tag}" data-day="${d.date}" aria-haspopup="dialog"><span class="scan-date">${d.date}<small>${d.dow}요일</small></span><span class="scan-main"><strong><span class="row-emoji" aria-hidden="true">${d.level==='이동일'||d.level==='귀국'?'✈️':d.tag==='tour'?'🏔️':d.date==='9.30'?'♨️':'📍'}</span>${itineraryLabels[d.date]||d.title}</strong><small>${d.city}</small></span><span class="scan-end">일정·식사 보기</span></button>`).join('');
@@ -201,9 +201,10 @@ function simplifyConfirmedUI(){
 
   const list=$('.action-list');
   if(list)list.innerHTML=`
-    <li><span>1</span><div><strong>캐나다 달러 현금 준비</strong><small>가이드·기사 팁 C$200–250 + 선택관광 · 현지에서 현금만 받습니다</small></div></li>
-    <li><span>2</span><div><strong>선택관광 신청 상태 확인</strong><small>설상차 C$100 · 멀린 크루즈 C$115 · 곤돌라 C$80 (1인)</small></div></li>
-    <li><span>3</span><div><strong>9/29 투어 호텔명 확인</strong><small>바우처에서 확인 · 9/30은 런들스톤 로지로 옮깁니다</small></div></li>`;
+    <li><span>1</span><div><strong>The Pink Door 9/25 저녁 예약</strong><small>OpenTable · 20:15 전후 · 금요일 라이브 음악 · 일·월 휴무</small></div></li>
+    <li><span>2</span><div><strong>캐나다 달러 현금 준비</strong><small>가이드·기사 팁 C$200–250 + 선택관광 · 현지에서 현금만 받습니다</small></div></li>
+    <li><span>3</span><div><strong>선택관광 신청 상태 확인</strong><small>설상차 C$100 · 멀린 크루즈 C$115 · 곤돌라 C$80 (1인)</small></div></li>
+    <li><span>4</span><div><strong>9/29 투어 호텔명 확인</strong><small>바우처에서 확인 · 9/30은 런들스톤 로지로 옮깁니다</small></div></li>`;
 
   const flightSection=$('#flights');
   if(flightSection){

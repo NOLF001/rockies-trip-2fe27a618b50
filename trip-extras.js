@@ -27,12 +27,27 @@ const MAPS={
       {n:'모레인 호수',q:'Moraine Lake',lat:51.3217,lon:-116.1860,day:'9/29',region:'tour'},
       {n:'밴프',q:'Banff, Alberta',lat:51.1784,lon:-115.5708,day:'9/29–10/1',region:'calgary'}
     ]},
-  seattle:{z:15,x0:5246,y0:11441,cols:4,rows:4,pad:70,title:'시애틀 도심',caption:'숙소에서 파이크 플레이스까지 걸어서 약 10분 · 스페이스 니들은 Westlake에서 모노레일',
+  seattle:{z:15,x0:5246,y0:11441,cols:4,rows:4,pad:70,title:'파이크 플레이스 먹거리 지도',caption:'숙소에서 시장까지 걸어서 약 10분 · 아래 가게들은 서로 1~3분 거리',
     pins:[
       {n:'The Westin Seattle',q:'The Westin Seattle, 1900 5th Avenue',lat:47.6138,lon:-122.3375,day:'숙소 9/24–26',region:'seattle'},
-      {n:'파이크 플레이스 마켓',q:'Pike Place Market',lat:47.6094,lon:-122.3417,day:'9/25 오전',region:'seattle'},
-      {n:'워터프런트',q:'Pier 62 Seattle Waterfront',lat:47.6076,lon:-122.3440,day:'9/25 오후',region:'seattle'},
-      {n:'스페이스 니들',q:'Space Needle',lat:47.6205,lon:-122.3493,day:'9/25 15:00',region:'seattle'}
+      {n:'Le Panier (빵)',q:'Le Panier, 1902 Pike Place, Seattle',lat:47.60983,lon:-122.34228,day:'9/25 아침',region:'calgary'},
+      {n:'원조 스타벅스 1호점',q:'Starbucks 1912 Pike Place, Seattle',lat:47.61001,lon:-122.34258,day:'9/25 아침',region:'calgary'},
+      {n:'파이크 플레이스 마켓',q:'Pike Place Market',lat:47.6094,lon:-122.3414,day:'9/25 오전',region:'seattle'},
+      {n:'Storyville Coffee',q:'Storyville Coffee Pike Place, Seattle',lat:47.60897,lon:-122.34060,day:'9/25 오전 커피',region:'calgary'},
+      {n:'Pike Place Chowder',q:'Pike Place Chowder, 1530 Post Alley, Seattle',lat:47.60940,lon:-122.34123,day:'9/25 점심',region:'calgary'},
+      {n:'The Pink Door',q:'The Pink Door, 1919 Post Alley, Seattle',lat:47.61039,lon:-122.34253,day:'9/25 저녁 · 예약 필수',region:'calgary'},
+      {n:'워터프런트 Pier 62',q:'Pier 62 Seattle Waterfront',lat:47.6076,lon:-122.3440,day:'9/25 오후',region:'seattle'},
+      {n:'스페이스 니들',q:'Space Needle',lat:47.6205,lon:-122.3493,day:'선택',region:'seattle'}
+    ]},
+  seawide:{z:13,x0:1310,y0:2856,cols:4,rows:7,pad:26,title:'시애틀 광역 · 전망대와 캠퍼스',
+    caption:'해밀턴 뷰포인트는 서쪽(차 15–20분), UW와 가스웍스는 북쪽(경전철·차 10–20분)',
+    pins:[
+      {n:'The Westin Seattle',q:'The Westin Seattle, 1900 5th Avenue',lat:47.6138,lon:-122.3375,day:'숙소',region:'seattle'},
+      {n:'파이크 플레이스 마켓',q:'Pike Place Market',lat:47.6094,lon:-122.3414,day:'9/25 오전',region:'seattle'},
+      {n:'해밀턴 뷰포인트 파크',q:'Hamilton Viewpoint Park, Seattle',lat:47.59152,lon:-122.38379,day:'9/24 밤 야경',region:'calgary'},
+      {n:'워싱턴 대학교',q:'Suzzallo Library, University of Washington, Seattle',lat:47.65581,lon:-122.30805,day:'9/25 오후',region:'tour'},
+      {n:'가스웍스 파크',q:'Gas Works Park, Seattle',lat:47.64560,lon:-122.33493,day:'9/25 해질녘',region:'tour'},
+      {n:'스페이스 니들',q:'Space Needle',lat:47.6205,lon:-122.3493,day:'선택',region:'seattle'}
     ]},
   banff:{z:14,x0:2931,y0:5470,cols:3,rows:5,pad:80,title:'밴프 타운',caption:'9/30 숙소(런들스톤 로지)에서 다운타운까지 약 5블록 · 온천은 버스·택시로 약 10–15분',
     pins:[
@@ -66,7 +81,7 @@ function mapHTML(key,{compact=false}={}){
   const legend=m.pins.map((p,i)=>`<li data-region="${p.region}"><span class="map-num">${i+1}</span><span class="map-name"><strong>${esc(p.n)}</strong><small>${esc(p.day)}</small></span><a href="${gmaps(p.q)}" target="_blank" rel="noreferrer" aria-label="${esc(p.n)} Google 지도에서 열기">${ic('navigation')}길찾기</a></li>`).join('');
   return `<figure class="trip-map${compact?' compact':''}" data-map="${key}"><div class="map-frame"><svg viewBox="${f(x1)} ${f(y1)} ${f(w)} ${f(h)}" role="img" aria-label="${esc(m.title)} 지도: ${esc(m.pins.map(p=>p.n).join(', '))}"><g class="map-tiles">${tiles.join('')}</g>${line}${flights}${pins}</svg><span class="map-attr">© OpenStreetMap contributors</span></div><figcaption><div class="map-head"><strong>${ic('map')}${esc(m.title)}</strong><small>${esc(m.caption)}</small></div><ol class="map-legend">${legend}</ol></figcaption></figure>`;
 }
-const dayMap={'9.24':'seattle','9.25':'seattle','9.26':'route','9.27':'route','9.28':'route','9.29':'route','9.30':'banff','10.1':'banff'};
+const dayMap={'9.24':['seawide'],'9.25':['seattle','seawide'],'9.26':['route'],'9.27':['route'],'9.28':['route'],'9.29':['route'],'9.30':['banff'],'10.1':['banff']};
 
 function placeMaps(){
   const heading=$('#itinerary .section-heading');
@@ -77,7 +92,7 @@ function placeMaps(){
   if(day){
     day.classList.add('has-map');
     const date=$('#detailKicker')?.textContent.match(/2026\.(\d+\.\d+)/)?.[1];
-    if(dayMap[date])day.insertAdjacentHTML('beforeend',`<div class="day-map">${mapHTML(dayMap[date],{compact:true})}</div>`);
+    (dayMap[date]||[]).forEach(key=>day.insertAdjacentHTML('beforeend',`<div class="day-map">${mapHTML(key,{compact:true})}</div>`));
   }
   const spring=$('.spring-details:not(.has-map)');
   if(spring){spring.classList.add('has-map');spring.querySelector('.spring-links')?.insertAdjacentHTML('beforebegin',mapHTML('banff',{compact:true}))}
