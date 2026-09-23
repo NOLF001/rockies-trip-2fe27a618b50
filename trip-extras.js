@@ -49,11 +49,23 @@ const MAPS={
       {n:'가스웍스 파크',q:'Gas Works Park, Seattle',lat:47.64560,lon:-122.33493,day:'9/25 해질녘',region:'tour'},
       {n:'스페이스 니들',q:'Space Needle',lat:47.6205,lon:-122.3493,day:'선택',region:'seattle'}
     ]},
+  calgary:{z:13,x0:1499,y0:2738,cols:4,rows:5,pad:24,title:'캘거리 · 9/26 저녁',
+    caption:'투어 호텔은 공항 남쪽 · 다운타운까지 차로 20분 안팎 · 스티븐 애비뉴 일대가 저녁 산책 구간',
+    pins:[
+      {n:'YYC 캘거리 공항',q:'Calgary International Airport',lat:51.12226,lon:-114.01354,day:'13:10 도착 · 14:00 픽업',region:'calgary'},
+      {n:'투어 호텔(후보)',q:'Best Western Premier Calgary Plaza Hotel',lat:51.06459,lon:-113.98527,day:'9/26 숙박',region:'seattle'},
+      {n:'스티븐 애비뉴',q:'Stephen Avenue Walk, Calgary',lat:51.04558,lon:-114.06427,day:'저녁 산책·식사',region:'tour'},
+      {n:'캘거리 타워',q:'Calgary Tower',lat:51.04430,lon:-114.06313,day:'전망대',region:'tour'},
+      {n:'프린스 아일랜드 파크',q:'Prince\'s Island Park, Calgary',lat:51.05518,lon:-114.07065,day:'보우강 산책',region:'tour'},
+      {n:'피스 브리지',q:'Peace Bridge, Calgary',lat:51.05391,lon:-114.07891,day:'해질녘 사진',region:'tour'}
+    ]},
   banff:{z:14,x0:2931,y0:5470,cols:3,rows:5,pad:80,title:'밴프 타운',caption:'9/30 숙소(런들스톤 로지)에서 다운타운까지 약 5블록 · 온천은 버스·택시로 약 10–15분',
     pins:[
       {n:'Rundlestone Lodge',q:'Rundlestone Lodge, 537 Banff Avenue, Banff',lat:51.18498,lon:-115.55887,day:'9/30 숙소 · 체크인 16:00',region:'seattle'},
       {n:'밴프 시내 · Banff Ave',q:'Banff Avenue, Banff',lat:51.1780,lon:-115.5705,day:'9/30 저녁',region:'calgary'},
-      {n:'보우 폭포',q:'Bow Falls, Banff',lat:51.1652,lon:-115.5624,day:'9/30 오전 투어',region:'tour'},
+      {n:'캐스케이드 가든',q:'Cascade of Time Garden, Banff',lat:51.17068,lon:-115.57208,day:'10/1 오전',region:'tour'},
+      {n:'서프라이즈 코너',q:'Surprise Corner Viewpoint, Banff',lat:51.16762,lon:-115.55983,day:'10/1 오전 전망',region:'tour'},
+      {n:'보우 폭포',q:'Bow Falls, Banff',lat:51.1652,lon:-115.5624,day:'9/30 오전 · 10/1 산책',region:'tour'},
       {n:'어퍼 핫스프링스',q:'Banff Upper Hot Springs',lat:51.1527,lon:-115.5614,day:'9/30 15:00–17:00',region:'tour'},
       {n:'밴프 곤돌라',q:'Banff Gondola',lat:51.1487,lon:-115.5722,day:'9/30 선택관광',region:'tour'}
     ]}
@@ -81,7 +93,7 @@ function mapHTML(key,{compact=false}={}){
   const legend=m.pins.map((p,i)=>`<li data-region="${p.region}"><span class="map-num">${i+1}</span><span class="map-name"><strong>${esc(p.n)}</strong><small>${esc(p.day)}</small></span><a href="${gmaps(p.q)}" target="_blank" rel="noreferrer" aria-label="${esc(p.n)} Google 지도에서 열기">${ic('navigation')}길찾기</a></li>`).join('');
   return `<figure class="trip-map${compact?' compact':''}" data-map="${key}"><div class="map-frame"><svg viewBox="${f(x1)} ${f(y1)} ${f(w)} ${f(h)}" role="img" aria-label="${esc(m.title)} 지도: ${esc(m.pins.map(p=>p.n).join(', '))}"><g class="map-tiles">${tiles.join('')}</g>${line}${flights}${pins}</svg><span class="map-attr">© OpenStreetMap contributors</span></div><figcaption><div class="map-head"><strong>${ic('map')}${esc(m.title)}</strong><small>${esc(m.caption)}</small></div><ol class="map-legend">${legend}</ol></figcaption></figure>`;
 }
-const dayMap={'9.24':['seawide'],'9.25':['seattle','seawide'],'9.26':['route'],'9.27':['route'],'9.28':['route'],'9.29':['route'],'9.30':['banff'],'10.1':['banff']};
+const dayMap={'9.24':['seawide'],'9.25':['seattle','seawide'],'9.26':['calgary','route'],'9.27':['route'],'9.28':['route'],'9.29':['route'],'9.30':['banff'],'10.1':['banff']};
 
 function placeMaps(){
   const heading=$('#itinerary .section-heading');

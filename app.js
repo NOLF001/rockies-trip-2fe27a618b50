@@ -202,9 +202,10 @@ function simplifyConfirmedUI(){
   const list=$('.action-list');
   if(list)list.innerHTML=`
     <li><span>1</span><div><strong>The Pink Door 9/25 저녁 예약</strong><small>OpenTable · 20:15 전후 · 금요일 라이브 음악 · 일·월 휴무</small></div></li>
-    <li><span>2</span><div><strong>캐나다 달러 현금 준비</strong><small>가이드·기사 팁 C$200–250 + 선택관광 · 현지에서 현금만 받습니다</small></div></li>
-    <li><span>3</span><div><strong>선택관광 신청 상태 확인</strong><small>설상차 C$100 · 멀린 크루즈 C$115 · 곤돌라 C$80 (1인)</small></div></li>
-    <li><span>4</span><div><strong>9/29 투어 호텔명 확인</strong><small>바우처에서 확인 · 9/30은 런들스톤 로지로 옮깁니다</small></div></li>`;
+    <li><span>2</span><div><strong>Banff Airporter 10/1 12:30 예약</strong><small>2인 · 성인 C$88.90 + 65세 이상 C$80.01 · 호텔 앞 픽업 · YYC 14:30 도착</small></div></li>
+    <li><span>3</span><div><strong>캐나다 달러 현금 준비</strong><small>가이드·기사 팁 C$200–250 + 선택관광 · 현지에서 현금만 받습니다</small></div></li>
+    <li><span>4</span><div><strong>선택관광 신청 상태 확인</strong><small>설상차 C$100 · 멀린 크루즈 C$115 · 곤돌라 C$80 (1인)</small></div></li>
+    <li><span>5</span><div><strong>9/29 투어 호텔명 확인</strong><small>바우처에서 확인 · 9/30은 런들스톤 로지로 옮깁니다</small></div></li>`;
 
   const flightSection=$('#flights');
   if(flightSection){
