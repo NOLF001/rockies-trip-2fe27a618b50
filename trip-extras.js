@@ -40,13 +40,14 @@ const MAPS={
       {n:'스페이스 니들',q:'Space Needle',lat:47.6205,lon:-122.3493,day:'선택',region:'seattle'}
     ]},
   seawide:{z:13,x0:1310,y0:2856,cols:4,rows:7,pad:26,title:'시애틀 광역 · 전망대와 캠퍼스',
-    caption:'해밀턴 뷰포인트는 서쪽(차 15–20분), UW와 가스웍스는 북쪽(경전철·차 10–20분)',
+    caption:'해밀턴 뷰포인트는 서쪽(차 15–20분), UW·가스웍스는 북쪽(경전철·차 10–20분), 케리 파크는 숙소에서 차 10분',
     pins:[
       {n:'The Westin Seattle',q:'The Westin Seattle, 1900 5th Avenue',lat:47.6138,lon:-122.3375,day:'숙소',region:'seattle'},
       {n:'파이크 플레이스 마켓',q:'Pike Place Market',lat:47.6094,lon:-122.3414,day:'9/25 오전',region:'seattle'},
       {n:'해밀턴 뷰포인트 파크',q:'Hamilton Viewpoint Park, Seattle',lat:47.59152,lon:-122.38379,day:'9/24 밤 야경',region:'calgary'},
       {n:'워싱턴 대학교',q:'Suzzallo Library, University of Washington, Seattle',lat:47.65581,lon:-122.30805,day:'9/25 오후',region:'tour'},
       {n:'가스웍스 파크',q:'Gas Works Park, Seattle',lat:47.64560,lon:-122.33493,day:'9/25 해질녘',region:'tour'},
+      {n:'케리 파크',q:'Kerry Park, Seattle',lat:47.62925,lon:-122.36012,day:'9/25 비 오면 대안',region:'tour'},
       {n:'스페이스 니들',q:'Space Needle',lat:47.6205,lon:-122.3493,day:'선택',region:'seattle'}
     ]},
   calgary:{z:13,x0:1499,y0:2738,cols:4,rows:5,pad:24,title:'캘거리 · 9/26 저녁',
